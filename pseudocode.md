@@ -68,9 +68,207 @@ When the user clicks any one of these affordances, call for data is made and vie
 
 ## **PROCEDURAL**
 
+## **IMPORTS**
+**build.gradle**
+`implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'`
+
 ## **JAVA**
+`import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private Button btnBP, btnSteps, btnSleep, btnWorkouts, btnTotalSteps, btnHeartRate;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Initialize buttons
+        btnBP = findViewById(R.id.btn_bp);
+        btnSteps = findViewById(R.id.btn_steps);
+        btnSleep = findViewById(R.id.btn_sleep);
+        btnWorkouts = findViewById(R.id.btn_workouts);
+        btnTotalSteps = findViewById(R.id.btn_total_steps);
+        btnHeartRate = findViewById(R.id.btn_heart_rate);
+
+        // Set click listeners
+        btnBP.setOnClickListener(this);
+        btnSteps.setOnClickListener(this);
+        btnSleep.setOnClickListener(this);
+        btnWorkouts.setOnClickListener(this);
+        btnTotalSteps.setOnClickListener(this);
+        btnHeartRate.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        // Handle button clicks
+        switch (view.getId()) {
+            case R.id.btn_bp:
+                // Handle BP button click
+                break;
+            case R.id.btn_steps:
+                // Handle Steps button click
+                break;
+            case R.id.btn_sleep:
+                // Handle Sleep button click
+                break;
+            case R.id.btn_workouts:
+                // Handle Workouts button click
+                break;
+            case R.id.btn_total_steps:
+                // Handle Total Steps button click
+                break;
+            case R.id.btn_heart_rate:
+                // Handle Heart Rate button click
+                break;
+        }
+    }
+}`
+
 
 ## **XML**
+`<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Logo at the top -->
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Back button on top left -->
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Horizontal top navigation -->
+    <LinearLayout
+        android:id="@+id/layout_top_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/image_logo"
+        android:padding="16dp">
+
+        <!-- BP button -->
+        <Button
+            android:id="@+id/btn_bp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="BP"/>
+
+        <!-- Steps button -->
+        <Button
+            android:id="@+id/btn_steps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Steps"/>
+
+        <!-- Sleep button -->
+        <Button            android:id="@+id/btn_sleep"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sleep"/>
+
+        <!-- Workouts button -->
+        <Button
+            android:id="@+id/btn_workouts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Workouts"/>
+    </LinearLayout>
+
+    <!-- Area for MPAndroidChart data -->
+    <FrameLayout
+        android:id="@+id/chart_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/layout_top_navigation"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray"/>
+
+    <!-- Sub navigation -->
+    <LinearLayout
+        android:id="@+id/layout_sub_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/chart_container"
+        android:padding="16dp">
+
+        <!-- Total Steps button -->
+        <Button
+            android:id="@+id/btn_total_steps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total Steps"/>
+
+        <!-- Heart Rate button -->
+        <Button
+            android:id="@+id/btn_heart_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Heart Rate"/>
+    </LinearLayout>
+
+    <!-- Text labels and numeric statistics -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/layout_sub_navigation"
+        android:padding="16dp">
+
+        <!-- Text label 1 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Label 1"/>
+
+        <!-- Numeric statistic 1 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Statistic 1"/>
+
+        <!-- Text label 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Label 2"/>
+
+        <!-- Numeric statistic 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Statistic 2"/>
+    </LinearLayout>
+
+</RelativeLayout>
+`
+
 
 
 
