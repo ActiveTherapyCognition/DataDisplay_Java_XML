@@ -70,65 +70,65 @@ When the user clicks any one of these affordances, call for data is made and vie
 
 ## **IMPORTS**
 **build.gradle**
-`implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'`
+	`implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'`
 
 ## **JAVA**
-`import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+	import android.os.Bundle;
+	import android.view.View;
+	import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;`
+	import androidx.appcompat.app.AppCompatActivity;`
 
-`public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btnBP, btnSteps, btnSleep, btnWorkouts, btnTotalSteps, btnHeartRate;
+	public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+	    private Button btnBP, btnSteps, btnSleep, btnWorkouts, btnTotalSteps, btnHeartRate;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+	    @Override
+	    protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
-        // Initialize buttons
-        btnBP = findViewById(R.id.btn_bp);
-        btnSteps = findViewById(R.id.btn_steps);
-        btnSleep = findViewById(R.id.btn_sleep);
-        btnWorkouts = findViewById(R.id.btn_workouts);
-        btnTotalSteps = findViewById(R.id.btn_total_steps);
-        btnHeartRate = findViewById(R.id.btn_heart_rate);
+		// Initialize buttons
+		btnBP = findViewById(R.id.btn_bp);
+		btnSteps = findViewById(R.id.btn_steps);
+		btnSleep = findViewById(R.id.btn_sleep);
+		btnWorkouts = findViewById(R.id.btn_workouts);
+		btnTotalSteps = findViewById(R.id.btn_total_steps);
+		btnHeartRate = findViewById(R.id.btn_heart_rate);
 
-        // Set click listeners
-        btnBP.setOnClickListener(this);
-        btnSteps.setOnClickListener(this);
-        btnSleep.setOnClickListener(this);
-        btnWorkouts.setOnClickListener(this);
-        btnTotalSteps.setOnClickListener(this);
-        btnHeartRate.setOnClickListener(this);
-    }
+		// Set click listeners
+		btnBP.setOnClickListener(this);
+		btnSteps.setOnClickListener(this);
+		btnSleep.setOnClickListener(this);
+		btnWorkouts.setOnClickListener(this);
+		btnTotalSteps.setOnClickListener(this);
+		btnHeartRate.setOnClickListener(this);
+	    }
 
-    @Override
-    public void onClick(View view) {
-        // Handle button clicks
-        switch (view.getId()) {
-            case R.id.btn_bp:
-                // Handle BP button click
-                break;
-            case R.id.btn_steps:
-                // Handle Steps button click
-                break;
-            case R.id.btn_sleep:
-                // Handle Sleep button click
-                break;
-            case R.id.btn_workouts:
-                // Handle Workouts button click
-                break;
-            case R.id.btn_total_steps:
-                // Handle Total Steps button click
-                break;
-            case R.id.btn_heart_rate:
-                // Handle Heart Rate button click
-                break;
-        }
-    }
-}`
+	    @Override
+	    public void onClick(View view) {
+		// Handle button clicks
+		switch (view.getId()) {
+		    case R.id.btn_bp:
+			// Handle BP button click
+			break;
+		    case R.id.btn_steps:
+			// Handle Steps button click
+			break;
+		    case R.id.btn_sleep:
+			// Handle Sleep button click
+			break;
+		    case R.id.btn_workouts:
+			// Handle Workouts button click
+			break;
+		    case R.id.btn_total_steps:
+			// Handle Total Steps button click
+			break;
+		    case R.id.btn_heart_rate:
+			// Handle Heart Rate button click
+			break;
+		}
+	    }
+	}
 
 
 ## **XML**
