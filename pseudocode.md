@@ -132,141 +132,141 @@ When the user clicks any one of these affordances, call for data is made and vie
 
 
 ## **XML**
-`<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    xmlns:tools="http://schemas.android.com/tools"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    tools:context=".MainActivity">
 
-    <!-- Logo at the top -->
-    <ImageView
-        android:id="@+id/image_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+	    <!-- Logo at the top -->
+	    <ImageView
+		android:id="@+id/image_logo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/logo"
+		android:layout_marginTop="16dp"
+		android:layout_centerHorizontal="true"/>
 
-    <!-- Back button on top left -->
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
+	    <!-- Back button on top left -->
+	    <Button
+		android:id="@+id/btn_back"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Back"
+		android:layout_alignParentStart="true"
+		android:layout_marginStart="16dp"
+		android:layout_marginTop="16dp"/>
 
-    <!-- Horizontal top navigation -->
-    <LinearLayout
-        android:id="@+id/layout_top_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/image_logo"
-        android:padding="16dp">
+	    <!-- Horizontal top navigation -->
+	    <LinearLayout
+		android:id="@+id/layout_top_navigation"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_below="@id/image_logo"
+		android:padding="16dp">
 
-        <!-- BP button -->
-        <Button
-            android:id="@+id/btn_bp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="BP"/>
+		<!-- BP button -->
+		<Button
+		    android:id="@+id/btn_bp"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:text="BP"/>
 
-        <!-- Steps button -->
-        <Button
-            android:id="@+id/btn_steps"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Steps"/>
+		<!-- Steps button -->
+		<Button
+		    android:id="@+id/btn_steps"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:text="Steps"/>
 
-        <!-- Sleep button -->
-        <Button            android:id="@+id/btn_sleep"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Sleep"/>
+		<!-- Sleep button -->
+		<Button            android:id="@+id/btn_sleep"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:text="Sleep"/>
 
-        <!-- Workouts button -->
-        <Button
-            android:id="@+id/btn_workouts"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Workouts"/>
-    </LinearLayout>
+		<!-- Workouts button -->
+		<Button
+		    android:id="@+id/btn_workouts"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:text="Workouts"/>
+	    </LinearLayout>
 
-    <!-- Area for MPAndroidChart data -->
-    <FrameLayout
-        android:id="@+id/chart_container"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@id/layout_top_navigation"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/darker_gray"/>
+	    <!-- Area for MPAndroidChart data -->
+	    <FrameLayout
+		android:id="@+id/chart_container"
+		android:layout_width="match_parent"
+		android:layout_height="200dp"
+		android:layout_below="@id/layout_top_navigation"
+		android:layout_marginTop="16dp"
+		android:background="@android:color/darker_gray"/>
 
-    <!-- Sub navigation -->
-    <LinearLayout
-        android:id="@+id/layout_sub_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/chart_container"
-        android:padding="16dp">
+	    <!-- Sub navigation -->
+	    <LinearLayout
+		android:id="@+id/layout_sub_navigation"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:layout_below="@id/chart_container"
+		android:padding="16dp">
 
-        <!-- Total Steps button -->
-        <Button
-            android:id="@+id/btn_total_steps"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Total Steps"/>
+		<!-- Total Steps button -->
+		<Button
+		    android:id="@+id/btn_total_steps"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:text="Total Steps"/>
 
-        <!-- Heart Rate button -->
-        <Button
-            android:id="@+id/btn_heart_rate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Heart Rate"/>
-    </LinearLayout>
+		<!-- Heart Rate button -->
+		<Button
+		    android:id="@+id/btn_heart_rate"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:text="Heart Rate"/>
+	    </LinearLayout>
 
-    <!-- Text labels and numeric statistics -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/layout_sub_navigation"
-        android:padding="16dp">
+	    <!-- Text labels and numeric statistics -->
+	    <LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:layout_below="@id/layout_sub_navigation"
+		android:padding="16dp">
 
-        <!-- Text label 1 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Label 1"/>
+		<!-- Text label 1 -->
+		<TextView
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="Label 1"/>
 
-        <!-- Numeric statistic 1 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Statistic 1"/>
+		<!-- Numeric statistic 1 -->
+		<TextView
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="Statistic 1"/>
 
-        <!-- Text label 2 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Label 2"/>
+		<!-- Text label 2 -->
+		<TextView
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="Label 2"/>
 
-        <!-- Numeric statistic 2 -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Statistic 2"/>
-    </LinearLayout>
+		<!-- Numeric statistic 2 -->
+		<TextView
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:text="Statistic 2"/>
+	    </LinearLayout>
 
-</RelativeLayout>
+	</RelativeLayout>
 `
 
 
