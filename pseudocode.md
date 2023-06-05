@@ -73,6 +73,7 @@ When the user clicks any one of these affordances, call for data is made and vie
 	`implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'`
 
 ## **JAVA**
+### **MainActivity.java**
 	import android.os.Bundle;
 	import android.view.View;
 	import android.widget.Button;
@@ -80,12 +81,17 @@ When the user clicks any one of these affordances, call for data is made and vie
 	import androidx.appcompat.app.AppCompatActivity;`
 
 	public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-	    private Button btnBP, btnSteps, btnSleep, btnWorkouts, btnTotalSteps, btnHeartRate;
+		private ArrayList<StepData> stepDataList;
+		private Button btnBP, btnSteps, btnSleep, btnWorkouts, btnTotalSteps, btnHeartRate;
 
 	    @Override
 	    protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		// Initialize step data
+		initializeStepData();
+	    
 
 		// Initialize buttons
 		btnBP = findViewById(R.id.btn_bp);
@@ -103,6 +109,60 @@ When the user clicks any one of these affordances, call for data is made and vie
 		btnTotalSteps.setOnClickListener(this);
 		btnHeartRate.setOnClickListener(this);
 	    }
+	    
+	    // Hardcoded daily step values (should be dynamic)
+	    private void initializeStepData() {
+		stepDataList = new ArrayList<>();
+		stepDataList.add(new StepData("Mon", 5000));
+		stepDataList.add(new StepData("Tue", 6000));
+		stepDataList.add(new StepData("Wed", 7000));
+		stepDataList.add(new StepData("Thu", 5500));
+		stepDataList.add(new StepData("Fri", 8000));
+		stepDataList.add(new StepData("Sat", 9000));
+		stepDataList.add(new StepData("Sun", 7500));
+		    }
+	     
+	    private void displayStepBarChart() {
+		// Create the bar entries
+		ArrayList<BarEntry> barEntries = new ArrayList<>();
+		for (int i = 0; i < stepDataList.size(); i++) {
+		    StepData stepData = stepDataList.get(i);
+		    barEntries.add(new BarEntry(i, stepData.getStepCount()));
+		}
+
+		// Create the bar dataset
+		BarDataSet barDataSet = new BarDataSet(barEntries, "Step Count");
+		barDataSet.setColor(Color.rgb(255, 165, 0)); // Orange color
+
+		// Create the bar data object
+		BarData barData = new BarData(barDataSet);
+		barData.setBarWidth(0.5f);
+
+		// Get the reference to the bar chart view
+		BarChart barChart = findViewById(R.id.bar_chart);
+
+		// Set the bar data to the chart
+		barChart.setData(barData);
+
+		// Customize the appearance of the bar chart
+		barChart.setBackgroundColor(Color.DKGRAY);
+		barChart.setDrawGridBackground(false);
+		barChart.getDescription().setEnabled(false);
+
+		// Customize the X-axis labels
+		XAxis xAxis = barChart.getXAxis();
+		xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+		xAxis.setValueFormatter(new IndexAxisValueFormatter(getXAxisLabels()));
+
+		// Customize the Y-axis labels
+		YAxis yAxisLeft = barChart.getAxisLeft();
+		yAxisLeft.setTextColor(Color.WHITE);
+		yAxisLeft.setGranularity(1f);
+		yAxisLeft.setAxisMinimum(0f);
+
+		// Refresh the chart
+		barChart.invalidate();
+	    }
 
 	    @Override
 	    public void onClick(View view) {
@@ -113,6 +173,7 @@ When the user clicks any one of these affordances, call for data is made and vie
 			break;
 		    case R.id.btn_steps:
 			// Handle Steps button click
+			displayStepBarChart();
 			break;
 		    case R.id.btn_sleep:
 			// Handle Sleep button click
@@ -129,6 +190,26 @@ When the user clicks any one of these affordances, call for data is made and vie
 		}
 	    }
 	}
+
+### **StepData.java**
+	public class StepData {
+	    private String date;
+	    private int stepCount;
+
+	    public StepData(String date, int stepCount) {
+		this.date = date;
+		this.stepCount = stepCount;
+	    }
+
+	    public String getDate() {
+		return date;
+	    }
+
+	    public int getStepCount() {
+		return stepCount;
+	    }
+	}
+
 
 
 ## **XML**
