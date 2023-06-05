@@ -77,9 +77,9 @@ When the user clicks any one of these affordances, call for data is made and vie
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;`
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+`public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnBP, btnSteps, btnSleep, btnWorkouts, btnTotalSteps, btnHeartRate;
 
     @Override
